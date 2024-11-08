@@ -10,7 +10,6 @@ export async function GET(req: NextRequest) {
         ?.replace("Bearer ", "");
     const isAuthenticated = await validateUser(sessionToken);
     if (!isAuthenticated) {
-        // Stefan testing
         return NextResponse.json("Unauthorized", { status: 401 });
     }
     // if the user is authenticated, return the secret
