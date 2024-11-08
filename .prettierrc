@@ -1,9 +1,0 @@
-{
-    "tabWidth": 4,
-    "printWidth": 80,
-    "embeddedLanguageFormatting": "auto",
-    "plugins": [
-        "prettier-plugin-embed",
-        "prettier-plugin-sql"
-    ]
-}
