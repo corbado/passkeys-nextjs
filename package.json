@@ -1,0 +1,34 @@
+{
+    "name": "next-js-example",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbo",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "prettier:fix": "prettier --write './**/*.{ts,tsx,css}'"
+    },
+    "dependencies": {
+        "@corbado/node-sdk": "^3.0.2",
+        "@corbado/react": "^2.18.0",
+        "lowdb": "^7.0.1",
+        "next": "^15.0.2",
+        "react": "19.0.0-rc-65a56d0e-20241020",
+        "react-dom": "19.0.0-rc-65a56d0e-20241020",
+        "server-only": "^0.0.1"
+    },
+    "devDependencies": {
+        "@corbado/types": "^2.11.2",
+        "@types/better-sqlite3": "^7.6.11",
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "eslint": "^8",
+        "eslint-config-next": "15.0.0",
+        "prettier": "^3.3.3",
+        "prettier-plugin-embed": "^0.4.15",
+        "prettier-plugin-sql": "^0.18.1",
+        "typescript": "^5"
+    }
+}
