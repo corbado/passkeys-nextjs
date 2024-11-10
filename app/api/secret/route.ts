@@ -1,14 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { validateUser } from "@/lib/server/authentication";
+import { getAuthenticatedUserFromAuthorizationHeader } from "@/lib/server/authentication";
 
 const secretString = "Passkeys are cool!";
 
 export async function GET(req: NextRequest) {
     // obtain the session token from the request's authorization header
-    const sessionToken = req.headers
-        .get("authorization")
-        ?.replace("Bearer ", "");
-    const isAuthenticated = await validateUser(sessionToken);
+    const user = await getAuthenticatedUserFromAuthorizationHeader(req);
+    const isAuthenticated = !!user;
     if (!isAuthenticated) {
         return NextResponse.json("Unauthorized", { status: 401 });
     }

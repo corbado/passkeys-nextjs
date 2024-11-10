@@ -1,21 +1,21 @@
 "use server";
 
-import { validateUserFromCookies } from "@/lib/server/authentication";
 import { getUser, insertUser, updateUserCity } from "@/lib/server/queries";
 import { revalidatePath } from "next/cache";
+import { getAuthenticatedUserFromCookie } from "@/lib/server/authentication";
 
 export async function handleUserLogin() {
     // obtain the users id from his session token
-    const userId = await validateUserFromCookies();
-    if (!userId) {
+    const user = await getAuthenticatedUserFromCookie();
+    if (!user) {
         return { success: false, message: "Not authenticated" } as const;
     }
     // check if we can find the user in the database
-    const dbUser = getUser(userId);
+    const dbUser = getUser(user.userId);
     if (!dbUser) {
         // if the user was not present, he justed signed up.
         // Create a new database entry for him
-        await insertUser(userId);
+        await insertUser(user.userId);
     }
     return {
         success: true,
@@ -33,10 +33,10 @@ export async function updateCity(data: FormData) {
         return;
     }
     // obtain the current users id through his session-token cookie
-    const userId = await validateUserFromCookies();
-    if (!userId) {
+    const user = await getAuthenticatedUserFromCookie();
+    if (!user) {
         return;
     }
-    await updateUserCity(userId, rawFormData.city);
+    await updateUserCity(user.userId, rawFormData.city);
     revalidatePath("");
 }

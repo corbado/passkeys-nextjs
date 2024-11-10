@@ -42,6 +42,7 @@ export default function LoggedInClosedPage() {
         });
     }
 
+
     const [queryResult, setQueryResult] = useState<QueryResult>({
         loading: false,
         error: undefined,

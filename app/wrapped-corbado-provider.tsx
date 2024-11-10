@@ -13,7 +13,6 @@ export default function WrappedCorbadoProvider({
     if (!projectId) {
         throw new Error("Missing Corbado project ID");
     }
-
     return (
         <CorbadoProvider
             projectId={projectId}

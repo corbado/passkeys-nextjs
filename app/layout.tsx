@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/app/(home)/navigation";
-import WrappedCorbadoProvider from "@/app/(home)/wrapped-corbado-provider";
+import WrappedCorbadoProvider from "@/app/wrapped-corbado-provider";
 import Link from "next/link";
 import Image from "next/image";
-import { validateUserFromCookies } from "@/lib/server/authentication";
+import { getAuthenticatedUserFromCookie } from "@/lib/server/authentication";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -18,8 +18,8 @@ export default async function RootLayout({
 }>) {
     // obtain user information, so we can pass it to the navigation bar
     // in a real-world application, you might store this information in a context
-    const cboUserId = await validateUserFromCookies();
-    const isAuthenticated = !!cboUserId;
+    const user = await getAuthenticatedUserFromCookie();
+    const isAuthenticated = !!user;
 
     return (
         <html lang="en" suppressHydrationWarning>

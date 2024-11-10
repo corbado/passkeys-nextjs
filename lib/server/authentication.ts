@@ -1,57 +1,61 @@
 import "server-only";
 import { Config, SDK } from "@corbado/node-sdk";
 import { cookies } from "next/headers";
+import { NextRequest } from "next/server";
 
 // Retrieve environment variables
 const projectID = process.env.NEXT_PUBLIC_CORBADO_PROJECT_ID;
 const apiSecret = process.env.CORBADO_API_SECRET;
-
 if (!projectID) {
-    throw new Error("Project ID is not set");
+    throw Error("Project ID is not set");
 }
 if (!apiSecret) {
-    throw new Error("API secret is not set");
+    throw Error("API secret is not set");
 }
 
 // Set the default API URLs
 const frontendAPI = process.env.CORBADO_FRONTEND_API;
 const backendAPI = process.env.CORBADO_BACKEND_API;
-
 if (!frontendAPI) {
-    throw new Error("Frontend API URL is not set");
+    throw Error("Frontend API URL is not set");
 }
 if (!backendAPI) {
-    throw new Error("Backend API URL is not set");
+    throw Error("Backend API URL is not set");
 }
 
 // Initialize the Corbado Node.js SDK with the configuration
 const config = new Config(projectID, apiSecret, frontendAPI, backendAPI);
 const sdk = new SDK(config);
 
-// Validate the user based on a session token
-export async function validateUser(sessionToken?: string) {
+export async function getAuthenticatedUserFromCookie() {
+    const reqCookies = await cookies();
+    const sessionToken = reqCookies.get("cbo_session_token")?.value;
     if (!sessionToken) {
-        return undefined;
+        return null;
     }
     try {
-        // Use the SDK to validate the user's session token
-        const sessionUser = await sdk.sessions().validateToken(sessionToken);
-        // If validation is successful, return the user's ID
-        return sessionUser.userId;
+        return await sdk.sessions().validateToken(sessionToken);
     } catch {
-        // Return undefined if validation fails
-        return undefined;
+        return null;
     }
 }
 
-// Validate the user using the session token from cookies
-export async function validateUserFromCookies() {
-    // Obtain the session token from the request cookies
-    const reqCookies = await cookies();
-    const sessionToken = reqCookies.get("cbo_session_token")?.value;
-    // Validate the user with the obtained session token
-    return validateUser(sessionToken);
+export async function getAuthenticatedUserFromAuthorizationHeader(
+    req: NextRequest,
+) {
+    const sessionToken = req.headers
+        .get("Authorization")
+        ?.replace("Bearer ", "");
+    if (!sessionToken) {
+        return null;
+    }
+    try {
+        return await sdk.sessions().validateToken(sessionToken);
+    } catch {
+        return null;
+    }
 }
+
 
 // Retrieve all identifiers for a given user ID
 export async function getUserIdentifiers(userId: string) {

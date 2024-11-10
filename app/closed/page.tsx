@@ -1,12 +1,12 @@
-import { validateUserFromCookies } from "@/lib/server/authentication";
 import Link from "next/link";
 import LoggedInClosedPage from "@/app/closed/client";
+import { getAuthenticatedUserFromCookie } from "@/lib/server/authentication";
 
 export default async function Closed() {
     // the userId being present means the user is authenticated
-    const userId = await validateUserFromCookies();
+    const user = await getAuthenticatedUserFromCookie();
 
-    if (!userId) {
+    if (!user) {
         return (
             <div>
                 <h1>Closed!</h1>
