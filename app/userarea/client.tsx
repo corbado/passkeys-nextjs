@@ -31,7 +31,7 @@ type QueryResult =
           secret: undefined;
       };
 
-export default function LoggedInClosedPage() {
+export default function LoggedInUserArea() {
     const { sessionToken } = useCorbado();
 
     function makeApiRequest() {
@@ -84,7 +84,7 @@ export default function LoggedInClosedPage() {
 
     return (
         <div>
-            <h1>Closed!</h1>
+            <h1>User area!</h1>
             <p>Since you are logged in, we can tell you a secret:</p>
             <button
                 onClick={onRevealSecret}

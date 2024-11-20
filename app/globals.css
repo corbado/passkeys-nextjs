@@ -70,6 +70,7 @@ ul {
     --bg-light: #2c334b;
     --bg-medium: #171b29ff;
 }
+
 body {
     background-color: var(--bg-medium);
     margin: 0 auto;
@@ -336,11 +337,13 @@ main ul li::before {
     border-radius: 8px;
     margin-bottom: 0.5rem;
 }
+
 #identifier-list > div {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     justify-items: start;
 }
+
 #identifier-list > div:not(:last-child) {
     border-bottom: 1px solid var(--text-slate);
 }
@@ -384,6 +387,10 @@ footer > svg:hover {
         margin-right: auto;
     }
 
+    .cb-passkey-list-primary-button:hover {
+        background-color: var(--secondary);
+    }
+
     .cb-passkey-list-card,
     .cb-container {
         background-color: var(--bg-light);
@@ -414,6 +421,7 @@ footer > svg:hover {
     nav > a:first-child {
         justify-self: start;
     }
+
     nav > *:last-child {
         justify-self: end;
     }

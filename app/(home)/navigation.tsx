@@ -40,10 +40,10 @@ export default function Navigation({
                     </li>
                     <li>
                         <Link
-                            href="/closed"
-                            data-selected={pathName === "/closed"}
+                            href="/userarea"
+                            data-selected={pathName === "/userarea"}
                         >
-                            Closed
+                            User area
                         </Link>
                     </li>
                     {currentIsAuthenticated ? (
@@ -79,13 +79,20 @@ export default function Navigation({
 }
 
 function LogoutButton() {
-    const { logout } = useCorbado();
+    const { logout, loading } = useCorbado();
     const router = useRouter();
 
     async function onLogout() {
+        if (loading) {
+            return;
+        }
         await logout();
         router.push("/");
     }
 
-    return <button onClick={onLogout}>Logout</button>;
+    return (
+        <button onClick={onLogout} disabled={loading}>
+            Logout
+        </button>
+    );
 }

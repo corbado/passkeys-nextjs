@@ -21,22 +21,23 @@ export function HomePage({ city }: { city: string }) {
                 Welcome {user?.name || user?.email} from {city}!
             </h1>
             <p>
-                You now have access to everything and can visit the closed area:
+                You now have access to everything and can visit the user area:
             </p>
-            <Link href="/closed" className="button">
-                Closed
+            <Link href="/userarea" className="button">
+                User area
             </Link>
         </div>
     );
 }
+
 
 function GuestHomePage() {
     return (
         <div>
             <h1>Welcome Guest!</h1>
             <p>
-                This Corbado example implementation demonstrates Corbado’s
-                passkey-first authentication solution.{" "}
+                This example demonstrates Corbado’s passkey-first authentication
+                solution.
             </p>
             <p>It covers all relevant aspects like -</p>
             <ul>
