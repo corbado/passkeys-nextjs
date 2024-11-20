@@ -3,7 +3,7 @@ import {
     getAuthenticatedUserFromCookie,
     getUserIdentifiers,
 } from "@/lib/server/authentication";
-import { getUser } from "@/lib/server/queries";
+import { getUser, insertUser } from "@/lib/server/queries";
 import { PasskeyManagement } from "@/app/profile/client";
 
 export default async function Page() {
@@ -14,12 +14,11 @@ export default async function Page() {
         redirect("/login");
     }
 
-    const dbUser = getUser(user.userId);
+    let dbUser = getUser(user.userId);
 
-    if (!dbUser) {
-        // this case should never occur, but needs to be handled still
-        redirect("/login");
-    }
+    // if we delete the example database, we might need to go out of sync
+    // with the corbado database, so we need to recreate the user again
+    dbUser ??= await insertUser(user.userId);
 
     const userIdentifiers = await getUserIdentifiers(user.userId);
 

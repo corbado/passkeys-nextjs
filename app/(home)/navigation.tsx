@@ -10,7 +10,6 @@ export default function Navigation({
 }: {
     initialIsAutenticated: boolean;
 }) {
-    const pathName = usePathname();
     const { loading, isAuthenticated } = useCorbado();
 
     // Use the server-side obtained value as the initial value
@@ -32,47 +31,12 @@ export default function Navigation({
                     />
                     <p>Corbado Example</p>
                 </Link>
-                <ul>
-                    <li>
-                        <Link href="/" data-selected={pathName === "/"}>
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/userarea"
-                            data-selected={pathName === "/userarea"}
-                        >
-                            User area
-                        </Link>
-                    </li>
-                    {currentIsAuthenticated ? (
-                        <li>
-                            <Link
-                                href="/profile"
-                                data-selected={pathName === "/profile"}
-                            >
-                                Profile
-                            </Link>
-                        </li>
-                    ) : (
-                        <li>
-                            <Link
-                                href="/signup"
-                                data-selected={pathName === "/signup"}
-                            >
-                                Sign up
-                            </Link>
-                        </li>
-                    )}
-                </ul>
                 {currentIsAuthenticated ? (
-                    <LogoutButton />
+                    <MainLinksAuthenticated />
                 ) : (
-                    <Link href="/login" data-selected={pathName === "/login"}>
-                        Login
-                    </Link>
+                    <MainLinksGuest />
                 )}
+                {currentIsAuthenticated && <LogoutButton />}
             </nav>
         </div>
     );
@@ -94,5 +58,59 @@ function LogoutButton() {
         <button onClick={onLogout} disabled={loading}>
             Logout
         </button>
+    );
+}
+
+
+function MainLinksAuthenticated() {
+    const pathName = usePathname();
+
+    return (
+        <ul>
+            <li>
+                <Link href="/" data-selected={pathName === "/"}>
+                    Home
+                </Link>
+            </li>
+            <li>
+                <Link href="/userarea" data-selected={pathName === "/userarea"}>
+                    User area
+                </Link>
+            </li>
+            <li>
+                <Link href="/profile" data-selected={pathName === "/profile"}>
+                    Profile
+                </Link>
+            </li>
+        </ul>
+    );
+}
+
+function MainLinksGuest() {
+    const pathName = usePathname();
+
+    return (
+        <ul>
+            <li>
+                <Link href="/" data-selected={pathName === "/"}>
+                    Home
+                </Link>
+            </li>
+            <li>
+                <Link href="/userarea" data-selected={pathName === "/userarea"}>
+                    User area
+                </Link>
+            </li>
+            <li>
+                <Link href="/signup" data-selected={pathName === "/signup"}>
+                    Sign up
+                </Link>
+            </li>
+            <li>
+                <Link href="/login" data-selected={pathName === "/login"}>
+                    Login
+                </Link>
+            </li>
+        </ul>
     );
 }

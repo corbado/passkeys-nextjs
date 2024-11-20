@@ -15,19 +15,22 @@ export function getUser(corbado_user_id?: string): User | undefined {
 /**
  * Inserts a new user into the database.
  * @param corbado_user_id - The unique corbado_user_id of the user.
+ * @returns The newly created user object.
  */
 export async function insertUser(corbado_user_id: string) {
     // check if user already exists
     if (getUser(corbado_user_id)) {
         throw new Error("User already exists");
     }
+    const user = {
+        id: crypto.randomUUID(),
+        corbado_user_id,
+        city: null,
+    }
     await db.update(({ users }) =>
-        users.push({
-            id: crypto.randomUUID(),
-            corbado_user_id,
-            city: null,
-        }),
+        users.push(user),
     );
+    return user;
 }
 
 /**

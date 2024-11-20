@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getUser } from "@/lib/server/queries";
 import { HomePage } from "@/app/(home)/client";
 import { getAuthenticatedUserFromCookie } from "@/lib/server/authentication";

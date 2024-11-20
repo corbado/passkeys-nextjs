@@ -168,7 +168,7 @@ nav ul {
     background-color: #727a95;
     border-radius: 8px;
     width: fit-content;
-    max-width: 400px;
+    /*max-width: 500px;*/
     padding: 0.3rem;
     gap: 0.2rem;
 }
@@ -203,18 +203,12 @@ nav > a:first-child {
     font-size: 20px;
 }
 
-nav > *:last-child {
-    justify-self: center;
-}
-
-nav > a:last-child[data-selected="true"] {
-    color: white;
-}
 
 nav > button:last-child {
     font-family: var(--font-space-grotesk);
     background-color: var(--primary);
     color: white;
+    justify-self: center;
     transition: background-color 0.3s;
     border-radius: 8px;
     font-weight: bold;
@@ -403,7 +397,7 @@ footer > svg:hover {
     }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 540px) {
     nav ul li a {
         padding: 0.5rem 2rem;
     }
@@ -415,14 +409,14 @@ footer > svg:hover {
 
 @media (min-width: 1150px) {
     nav {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
     }
 
     nav > a:first-child {
         justify-self: start;
     }
 
-    nav > *:last-child {
+    nav > button:last-child {
         justify-self: end;
     }
 }
