@@ -203,7 +203,6 @@ nav > a:first-child {
     font-size: 20px;
 }
 
-
 nav > button:last-child {
     font-family: var(--font-space-grotesk);
     background-color: var(--primary);
@@ -290,10 +289,9 @@ main ul li::before {
 #secret-box {
     border: 2px solid var(--text-slate);
     background: var(--bg-light);
-    display: block;
+    margin-top: 1rem;
     justify-self: center;
     padding: 0.3rem;
-    margin-top: 1rem;
 }
 
 #secret-box h3 {

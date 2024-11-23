@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev --turbo",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
@@ -13,9 +13,9 @@
         "@corbado/node-sdk": "^3.0.2",
         "@corbado/react": "^2.18.0",
         "lowdb": "^7.0.1",
-        "next": "^15.0.3",
-        "react": "19.0.0-rc-65a56d0e-20241020",
-        "react-dom": "19.0.0-rc-65a56d0e-20241020",
+        "next": "^14.2.18",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "server-only": "^0.0.1"
     },
     "devDependencies": {

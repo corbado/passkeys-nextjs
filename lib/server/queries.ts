@@ -26,10 +26,8 @@ export async function insertUser(corbado_user_id: string) {
         id: crypto.randomUUID(),
         corbado_user_id,
         city: null,
-    }
-    await db.update(({ users }) =>
-        users.push(user),
-    );
+    };
+    await db.update(({ users }) => users.push(user));
     return user;
 }
 
