@@ -40,7 +40,7 @@ async function Layout({ children }: { children: React.ReactNode }) {
                 <section>{children}</section>
                 <footer>
                     <Link
-                        href="https://github.com/corbado/examples.git"
+                        href="https://github.com/corbado/example-ts-nextjs.git"
                         target="_blank"
                     >
                         <Image
@@ -52,7 +52,7 @@ async function Layout({ children }: { children: React.ReactNode }) {
                         Github
                     </Link>
                     <Link
-                        href="https://docs.corbado.com/corbado-complete/overview/welcome"
+                        href="https://docs.corbado.com/corbado-complete/fullstack-integration/next-js"
                         target="_blank"
                     >
                         <Image
