@@ -58,6 +58,12 @@ ul {
     padding: 0;
 }
 
+span {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
 /* CSS reset end */
 
 /* General Theming */
@@ -96,8 +102,6 @@ h6 {
 
 p,
 li,
-a,
-span,
 a {
     font-family: var(--font-inter);
 }
@@ -109,7 +113,6 @@ button {
 
 p,
 li,
-span,
 a {
     color: var(--text-slate);
 }

@@ -32,7 +32,7 @@ type QueryResult =
       };
 
 export default function LoggedInUserArea() {
-    const { sessionToken } = useCorbado();
+    const { sessionToken, loading } = useCorbado();
 
     function makeApiRequest() {
         return fetch("/api/secret", {
@@ -85,10 +85,10 @@ export default function LoggedInUserArea() {
     return (
         <div>
             <h1>User area!</h1>
-            <p>Since you are logged in, we can tell you a secret:</p>
+            <p>Since you are logged-in, we can tell you a secret:</p>
             <button
                 onClick={onRevealSecret}
-                disabled={queryResult.loading || !!queryResult.secret}
+                disabled={loading || queryResult.loading || !!queryResult.secret}
             >
                 Reveal secret
             </button>
