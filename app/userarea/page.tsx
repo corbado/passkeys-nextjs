@@ -10,7 +10,7 @@ export default async function UserArea() {
         return (
             <div>
                 <h1>User area!</h1>
-                <p>This page is for logged in users only. Please login:</p>
+                <p>This page is for logged-in users only. Please login:</p>
                 <Link href="/login" className="button">
                     Login
                 </Link>

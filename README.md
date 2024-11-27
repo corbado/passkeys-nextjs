@@ -2,7 +2,8 @@
 
 # Next.js (TypeScript) Passkey Example App
 
-This is a sample implementation of the Corbado React package and Corbado Node SDK being integrated into a web application built with Next.js.
+This is a sample implementation of the Corbado React.js package and Corbado Node.js SDK being integrated into a web
+application built with Next.js.
 
 Please see the [full blog post](https://www.corbado.com/blog/nextjs-passkeys) to understand the detailed steps needed to integrate passkeys into Next.js apps.
 
@@ -13,14 +14,14 @@ Please see the [full blog post](https://www.corbado.com/blog/nextjs-passkeys) to
 - `app/user-data/route.ts`: api route that checks the users authentication state using the Corbado Node SDK
 - `app/page.tsx`: client rendered page that accesses data from the above mentioned route
 - `.env.local`: add relevant environment variables that you can obtain
-  from [Corbado developer panel](https://app.corbado.com/signin#register)
+  from [Corbado developer panel](https://app.corbado.com/)
 
 ## Setup
 
 ### Prerequisites
 
 Please follow the steps in [Getting started](https://docs.corbado.com/overview/getting-started) to create and configure
-a project in the [Corbado developer panel](https://app.corbado.com/signin#register).
+a project in the [Corbado developer panel](https://app.corbado.com/).
 
 You need to have [Node](https://nodejs.org/en/download) and `npm` installed to run it.
 

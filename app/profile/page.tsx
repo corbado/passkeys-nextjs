@@ -26,7 +26,7 @@ export default async function Page() {
         <div>
             <h1>Profile</h1>
             <p>
-                <strong>Example userId</strong>: {dbUser.id}
+                <strong>Example userID</strong>: {dbUser.id}
             </p>
             <p>
                 <strong>Corbado userID</strong>: {dbUser.corbado_user_id}

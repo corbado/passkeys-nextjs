@@ -28,7 +28,6 @@
         "eslint-config-next": "15.0.0",
         "prettier": "^3.3.3",
         "prettier-plugin-embed": "^0.4.15",
-        "prettier-plugin-sql": "^0.18.1",
         "typescript": "^5"
     }
 }
