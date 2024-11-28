@@ -27,14 +27,14 @@ You need to have [Node](https://nodejs.org/en/download) and `npm` installed to r
 
 ### Configure environment variables
 
-Use the values you obtained in [Prerequisites](#prerequisites) to configure the following variables inside an `.env.local`
+Use the values you obtained in [Prerequisites](#prerequisites) to configure the following variables inside an `.env`
 file you create in the root folder of this project:
 
 ```sh
-NEXT_PUBLIC_CORBADO_PROJECT_ID=<YOUR PROJECT ID>
-CORBADO_API_SECRET=<YOUR API SECRET>
-CORBADO_FRONTEND_API=<YOUR FRONTEND API>
-CORBADO_BACKEND_API=<YOUR BACKEND API>
+NEXT_PUBLIC_CORBADO_PROJECT_ID=pro-XXX
+CORBADO_API_SECRET=corbado1_XXX
+CORBADO_FRONTEND_API=https://${CORBADO_PROJECT_ID}.frontendapi.cloud.corbado.io
+CORBADO_BACKEND_API=https://backendapi.cloud.corbado.io
 ```
 
 ## Usage
