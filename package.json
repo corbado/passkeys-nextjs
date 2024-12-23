@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
@@ -13,21 +13,25 @@
         "@corbado/node-sdk": "^3.0.2",
         "@corbado/react": "^2.18.0",
         "lowdb": "^7.0.1",
-        "next": "^14.2.18",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "next": "15.1.2",
+        "react": "19.0.0",
+        "react-dom": "19.0.0",
         "server-only": "^0.0.1"
     },
     "devDependencies": {
         "@corbado/types": "^2.11.2",
         "@types/better-sqlite3": "^7.6.11",
         "@types/node": "^20",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
+        "@types/react": "19.0.2",
+        "@types/react-dom": "19.0.2",
         "eslint": "^8",
-        "eslint-config-next": "15.0.0",
+        "eslint-config-next": "15.1.2",
         "prettier": "^3.3.3",
         "prettier-plugin-embed": "^0.4.15",
         "typescript": "^5"
+    },
+    "overrides": {
+        "@types/react": "19.0.2",
+        "@types/react-dom": "19.0.2"
     }
 }

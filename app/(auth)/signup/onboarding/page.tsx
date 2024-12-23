@@ -6,14 +6,13 @@ import { FormEvent, useRef } from "react";
 import { updateCity } from "@/app/(auth)/actions";
 
 export default function Onboarding() {
-    const router = useRouter();
     const formRef = useRef<HTMLFormElement>(null);
+    const router = useRouter();
 
     async function onCitySubmit(e: FormEvent) {
         e.preventDefault();
         // update the user's city
         await updateCity(new FormData(formRef.current!));
-        // redirect the user to the homepage
         router.push("/");
     }
 

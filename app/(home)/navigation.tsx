@@ -68,7 +68,7 @@ function MainLinksAuthenticated() {
     return (
         <ul>
             <li>
-                <Link href="/" data-selected={pathName === "/"}>
+                <Link href="/" data-selected={pathName === "/"} prefetch={false}>
                     Home
                 </Link>
             </li>
@@ -92,7 +92,7 @@ function MainLinksGuest() {
     return (
         <ul>
             <li>
-                <Link href="/" data-selected={pathName === "/"}>
+                <Link href="/" data-selected={pathName === "/"} prefetch={false}>
                     Home
                 </Link>
             </li>

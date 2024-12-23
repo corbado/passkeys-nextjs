@@ -2,10 +2,14 @@
 
 # Next.js (TypeScript) Passkey Example App
 
-This is a sample implementation of the Corbado React.js package and Corbado Node.js SDK being integrated into a web
+This is a sample implementation of
+the [Corbado React.js](https://github.com/corbado/javascript/tree/develop/packages/react) package
+and [Corbado Node.js](https://github.com/corbado/corbado-nodejs)
+SDK being integrated into a web
 application built with Next.js.
 
-Please see the [full blog post](https://www.corbado.com/blog/nextjs-passkeys) to understand the detailed steps needed to integrate passkeys into Next.js apps.
+Please see the [full blog post](https://www.corbado.com/blog/nextjs-passkeys) to understand the detailed steps needed to
+integrate passkeys into Next.js apps.
 
 ## File structure
 

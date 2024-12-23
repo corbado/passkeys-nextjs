@@ -38,5 +38,5 @@ export async function updateCity(data: FormData) {
         return;
     }
     await updateUserCity(user.userId, rawFormData.city);
-    revalidatePath("");
+    revalidatePath("/");
 }
