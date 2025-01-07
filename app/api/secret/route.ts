@@ -12,3 +12,4 @@ export async function GET(req: NextRequest) {
     // if the user is authenticated, return the secret
     return NextResponse.json({ secret: secretString });
 }
+

@@ -16,8 +16,8 @@ export default async function Page() {
 
     let dbUser = getUser(user.userId);
 
-    // if we delete the example database, we might need to go out of sync
-    // with the corbado database, so we need to recreate the user again
+    // if we delete the example database, we might go out of sync with
+    // the corbado database, so we need to recreate the user again
     dbUser ??= await insertUser(user.userId);
 
     const userIdentifiers = await getUserIdentifiers(user.userId);

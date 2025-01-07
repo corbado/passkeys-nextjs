@@ -18,8 +18,6 @@ export default function WrappedCorbadoProvider({
             projectId={projectId}
             // enable dark mode for the Corbado UI
             darkMode="on"
-            // store the users session-token in a cookie called 'cbo_session_token'
-            setShortSessionCookie
             // apply our custom styles to the Corbado UI
             theme="cbo-custom-styles"
             // use our custom translations

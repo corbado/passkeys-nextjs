@@ -13,7 +13,7 @@ export async function handleUserLogin() {
     // check if we can find the user in the database
     const dbUser = getUser(user.userId);
     if (!dbUser) {
-        // if the user was not present, he justed signed up.
+        // if the user was not present, he just signed up.
         // Create a new database entry for him
         await insertUser(user.userId);
     }
@@ -24,6 +24,7 @@ export async function handleUserLogin() {
         hasCompletedOnboarding: !!dbUser && !!dbUser.city,
     } as const;
 }
+
 
 export async function updateCity(data: FormData) {
     const rawFormData = {
