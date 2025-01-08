@@ -1,15 +1,12 @@
 <img width="1070" alt="GitHub Repo Cover" src="https://github.com/corbado/corbado-php/assets/18458907/aa4f9df6-980b-4b24-bb2f-d71c0f480971">
 
-# Next.js (TypeScript) Passkey Example App
+# Next.js Passkeys Example Application using TypeScript
 
-This is a sample implementation of
-the [Corbado React.js](https://github.com/corbado/javascript/tree/develop/packages/react) package
-and [Corbado Node.js](https://github.com/corbado/corbado-nodejs)
-SDK being integrated into a web
-application built with Next.js.
+This is a sample implemention of the [Corbado passkeys-first authentication solution](https://www.corbado.com) using
+Next.js with TypeScript. The following packages are being used:
 
-Please see the [full blog post](https://www.corbado.com/blog/nextjs-passkeys) to understand the detailed steps needed to
-integrate passkeys into Next.js apps.
+- [Corbado React.js](https://github.com/corbado/javascript/tree/develop/packages/react)
+- [Corbado Node.js](https://github.com/corbado/corbado-nodejs)
 
 ## File structure
 
@@ -43,8 +40,6 @@ CORBADO_BACKEND_API=https://backendapi.cloud.corbado.io
 
 ## Usage
 
-### Run the project locally
-
 Run
 
 ```bash
@@ -58,3 +53,9 @@ Finally, you can run the project locally with
 ```bash
 npm run dev
 ```
+
+## Passkeys support
+
+- Community for Developer Support: https://bit.ly/passkeys-community
+  - Passkeys Debugger: https://www.passkeys-debugger.io/
+  - Passkey Subreddit: https://www.reddit.com/r/passkey/
