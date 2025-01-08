@@ -2,7 +2,7 @@
 
 # Next.js Passkeys Example Application using TypeScript
 
-This is a sample implemention of the [Corbado passkeys-first authentication solution](https://www.corbado.com) using
+This is a sample implementation of the [Corbado passkeys-first authentication solution](https://www.corbado.com) using
 Next.js with TypeScript. The following packages are being used:
 
 - [Corbado React.js](https://github.com/corbado/javascript/tree/develop/packages/react)
@@ -57,5 +57,5 @@ npm run dev
 ## Passkeys support
 
 - Community for Developer Support: https://bit.ly/passkeys-community
-  - Passkeys Debugger: https://www.passkeys-debugger.io/
-  - Passkey Subreddit: https://www.reddit.com/r/passkey/
+- Passkeys Debugger: https://www.passkeys-debugger.io/
+- Passkey Subreddit: https://www.reddit.com/r/passkey/
