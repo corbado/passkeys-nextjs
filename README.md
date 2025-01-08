@@ -31,7 +31,7 @@ You need to have [Node](https://nodejs.org/en/download) and `npm` installed to r
 
 ### Configure environment variables
 
-Use the values you obtained in [Prerequisites](#prerequisites) to configure the following variables inside an `.env`
+Use the values you obtained in [Prerequisites](#prerequisites) to configure the following variables inside a `.env`
 file you create in the root folder of this project:
 
 ```sh
