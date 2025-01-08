@@ -39,8 +39,6 @@ CORBADO_BACKEND_API=https://backendapi.cloud.corbado.io
 
 ## Usage
 
-### Run the project locally
-
 Run
 
 ```bash
