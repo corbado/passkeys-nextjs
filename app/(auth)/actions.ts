@@ -25,7 +25,6 @@ export async function handleUserLogin() {
     } as const;
 }
 
-
 export async function updateCity(data: FormData) {
     const rawFormData = {
         city: data.get("city"),
