@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@corbado/node-sdk": "^3.0.2",
-        "@corbado/react": "^2.18.0",
+        "@corbado/react": "^3.0.0",
         "lowdb": "^7.0.1",
         "next": "15.1.2",
         "react": "19.0.0",
@@ -19,7 +19,7 @@
         "server-only": "^0.0.1"
     },
     "devDependencies": {
-        "@corbado/types": "^2.11.2",
+        "@corbado/types": "^3.0.0",
         "@types/better-sqlite3": "^7.6.11",
         "@types/node": "^20",
         "@types/react": "19.0.2",
