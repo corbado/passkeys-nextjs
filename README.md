@@ -8,6 +8,8 @@ Next.js with TypeScript. The following packages are being used:
 - [Corbado React.js](https://github.com/corbado/javascript/tree/develop/packages/react)
 - [Corbado Node.js](https://github.com/corbado/corbado-nodejs)
 
+[![integration-guides](https://github.com/user-attachments/assets/7859201b-a345-4b68-b336-6e2edcc6577b)](https://app.corbado.com/integration-guides/nextjs)
+
 ## File structure
 
 - `app/auth/page.tsx`: the file where the React Auth component is used
