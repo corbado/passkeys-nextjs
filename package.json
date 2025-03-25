@@ -13,7 +13,7 @@
         "@corbado/node-sdk": "^3.0.2",
         "@corbado/react": "^3.0.0",
         "lowdb": "^7.0.1",
-        "next": "15.1.2",
+        "next": "^15.2.4",
         "react": "19.0.0",
         "react-dom": "19.0.0",
         "server-only": "^0.0.1"
