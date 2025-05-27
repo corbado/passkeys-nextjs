@@ -10,18 +10,23 @@ export default function WrappedCorbadoProvider({
 }: {
     children: React.ReactNode;
 }) {
-    const hasSentTelemetry = useRef(false);
-
     // obtain the Corbado project ID from the environment variables
     const projectId = process.env.NEXT_PUBLIC_CORBADO_PROJECT_ID;
 
+    const hasSentTelemetry = useRef(false);
+
     useEffect(() => {
-        if (hasSentTelemetry.current || !projectId) return;
+        if (
+            hasSentTelemetry.current ||
+            !projectId ||
+            process.env.NEXT_PUBLIC_CORBADO_TELEMETRY_DISABLED === "true"
+        )
+            return;
 
         void sendEvent({
             type: TelemetryEventType.EXAMPLE_APPLICATION_OPENED,
             payload: {
-                exampleName: "corbado/example-ts-nextjs",
+                exampleName: "corbado/passkeys-nextjs",
             },
             sdkVersion: "3.1.0",
             sdkName: "React SDK",
@@ -44,6 +49,11 @@ export default function WrappedCorbadoProvider({
             theme="cbo-custom-styles"
             // use our custom translations
             customTranslations={{ en: englishTranslations }}
+            telemetry={
+                process.env.NEXT_PUBLIC_CORBADO_TELEMETRY_DISABLED === "true"
+                    ? false
+                    : undefined
+            }
         >
             {children}
         </CorbadoProvider>
